@@ -1,0 +1,31 @@
+{
+  "name": "opi-sunxi-pwm",
+  "version": "0.0.1",
+  "description": "Sunxi Orange Pi PWM0 access with Node.js",
+  "main": "opi-sunxi-pwm.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llatinov/opi-sunxi-pwm.git"
+  },
+  "keywords": [
+    "Orange Pi",
+    "PWM"
+  ],
+  "author": "Lyudmil Latinov <llatinov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/llatinov/opi-sunxi-pwm/issues"
+  },
+  "homepage": "https://github.com/llatinov/opi-sunxi-pwm#readme",
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "sinon": "^4.1.2"
+  }
+}
