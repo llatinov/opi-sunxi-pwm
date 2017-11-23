@@ -60,9 +60,7 @@ Writes to PWM a percent value. It accept decimal values from 0 to 100, where 100
 Setter that sets custom value for entirecycles. This is the number of ticks in one PWM period. Accepted values are from 255 to 65355, default value is 1023. The bigger the vaSetter has to be called before enable() in order to take effect. 
 
 ## Usage
-Assume that there's an LED on PA5 - middle pin of Debug TTL UART interface. Code bellow make the LED pulse.
-
-When the button is pressed the LED should turn on, when it's released the LED should turn off. This can be achieved with the following code:
+Assume that there's an LED on PA5 - middle pin of Debug TTL UART interface. Code bellow make the LED pulse. Every 10ms PWM write is done and write value is increased or decreased.
 
 ```javascript
 'use strict';
