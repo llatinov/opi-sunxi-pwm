@@ -21,17 +21,18 @@ class PWM {
   disable() {
     fs.writeFileSync(FILE_ENABLE, 0);
     fs.writeFileSync(FILE_ENTIRE_CYCLES, 0);
+    fs.writeFileSync(FILE_ACTIVE_CYCLES, 0);
     this.enabled = false;
   }
 
-  pwmWrite(value) {
+  write(percentValue) {
     if (!this.enabled) {
       throw new Error('PWM0 write not enabled');
     }
-    if (value < 0 || value > 100) {
-      throw new Error('Expected decimal value between 0 and 100');
+    if (percentValue < 0 || percentValue > 100) {
+      throw new Error(`Expected decimal value between 0 and 100, but found ${percentValue}`);
     }
-    value = parseInt(value * this.cycles / 100);
+    const value = parseInt(percentValue * this.cycles / 100);
     fs.writeFileSync(FILE_ACTIVE_CYCLES, value);
   }
 
