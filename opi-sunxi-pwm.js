@@ -36,8 +36,8 @@ class PWM {
     fs.writeFileSync(FILE_ACTIVE_CYCLES, value);
   }
 
-  set entireCycles(value) {
-    value = parseInt(value);
+  set entireCycles(intValue) {
+    const value = parseInt(intValue);
     if (value < 255 || value > 65535) {
       throw new Error('Expected integer value between 255 and 65535');
     }

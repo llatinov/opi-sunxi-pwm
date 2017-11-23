@@ -76,9 +76,10 @@ describe('opi-sunxi-pwm', () => {
     it('should write to "run" and "entirecycles" files', () => {
       pwm.disable();
 
-      sandbox.assert.calledTwice(writeFileSync);
+      sandbox.assert.calledThrice(writeFileSync);
       sandbox.assert.calledWith(writeFileSync, '/sys/class/pwm-sunxi-opi0/pwm0/run', 0);
       sandbox.assert.calledWith(writeFileSync, '/sys/class/pwm-sunxi-opi0/pwm0/entirecycles', 0);
+      sandbox.assert.calledWith(writeFileSync, '/sys/class/pwm-sunxi-opi0/pwm0/activecycles', 0);
     });
   });
 
